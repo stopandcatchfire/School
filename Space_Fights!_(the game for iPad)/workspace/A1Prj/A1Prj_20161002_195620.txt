@@ -1,0 +1,4 @@
+ERROR - 19:56:35: org.xml.sax.SAXParseExceptionpublicId: -//W3C//DTD HTML 4.01 Transitional//EN; systemId: http://www.w3.org/TR/html4/loose.dtd; lineNumber: 31; columnNumber: 3; The declaration for the entity "HTML.Version" must end with '>'.
+ERROR - 19:56:35: org.xml.sax.SAXParseExceptionpublicId: -//W3C//DTD HTML 4.01 Transitional//EN; systemId: http://www.w3.org/TR/html4/loose.dtd; lineNumber: 31; columnNumber: 3; The declaration for the entity "HTML.Version" must end with '>'.
+ERROR - 19:57:37: org.xml.sax.SAXParseExceptionpublicId: /A1Prj/src/com/mycompany/a1/Alien.java; systemId: file:///A1Prj/src/com/mycompany/a1/Alien.java; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
+ERROR - 19:57:37: org.xml.sax.SAXParseExceptionpublicId: /A1Prj/src/com/mycompany/a1/Alien.java; systemId: file:///A1Prj/src/com/mycompany/a1/Alien.java; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.

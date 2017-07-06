@@ -1,0 +1,2 @@
+ERROR - 19:57:37: org.xml.sax.SAXParseExceptionpublicId: /A1Prj/src/com/mycompany/a1/Alien.java; systemId: file:///A1Prj/src/com/mycompany/a1/Alien.java; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
+ERROR - 19:57:37: org.xml.sax.SAXParseExceptionpublicId: /A1Prj/src/com/mycompany/a1/Alien.java; systemId: file:///A1Prj/src/com/mycompany/a1/Alien.java; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.

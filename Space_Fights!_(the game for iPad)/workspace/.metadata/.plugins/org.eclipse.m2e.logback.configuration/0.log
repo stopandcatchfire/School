@@ -1,0 +1,43 @@
+2016-10-02 11:27:40,294 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2016-10-02 11:37:22,747 [Worker-9] ERROR o.e.m.i.l.MavenConsoleLineTracker - org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog. occurred while reading launch configuration file: C:\Users\nwant\workspace\A1Prj\Simulator_A1Prj.launch.
+org.eclipse.debug.core.DebugException: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog. occurred while reading launch configuration file: C:\Users\nwant\workspace\A1Prj\Simulator_A1Prj.launch.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:925) ~[org.eclipse.debug.core_3.10.100.v20160419-1720.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager.throwException(LaunchManager.java:2474) ~[org.eclipse.debug.core_3.10.100.v20160419-1720.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1378) ~[org.eclipse.debug.core_3.10.100.v20160419-1720.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470) ~[org.eclipse.debug.core_3.10.100.v20160419-1720.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640) ~[org.eclipse.debug.core_3.10.100.v20160419-1720.jar:na]
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.isMavenProcess(MavenConsoleLineTracker.java:142) [org.eclipse.m2e.launching_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.lineAppended(MavenConsoleLineTracker.java:85) [org.eclipse.m2e.launching_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.lineAppended(ConsoleLineNotifier.java:130) [org.eclipse.debug.ui_3.11.200.v20160518-1858.jar:na]
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.disconnect(ConsoleLineNotifier.java:75) [org.eclipse.debug.ui_3.11.200.v20160518-1858.jar:na]
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$CompiledPatternMatchListener.dispose(ConsolePatternMatcher.java:198) [org.eclipse.ui.console_3.6.200.v20160518-1858.jar:na]
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher.disconnect(ConsolePatternMatcher.java:260) [org.eclipse.ui.console_3.6.200.v20160518-1858.jar:na]
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$MatchJob.run(ConsolePatternMatcher.java:164) [org.eclipse.ui.console_3.6.200.v20160518-1858.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.8.0.v20160509-0411.jar:na]
+Caused by: org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203) ~[na:1.8.0_60]
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177) ~[na:1.8.0_60]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441) ~[na:1.8.0_60]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368) ~[na:1.8.0_60]
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437) ~[na:1.8.0_60]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:999) ~[na:1.8.0_60]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606) ~[na:1.8.0_60]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510) ~[na:1.8.0_60]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848) ~[na:1.8.0_60]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777) ~[na:1.8.0_60]
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) ~[na:1.8.0_60]
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243) ~[na:1.8.0_60]
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:348) ~[na:1.8.0_60]
+	at org.eclipse.debug.internal.core.LaunchManager.createInfoFromXML(LaunchManager.java:953) ~[org.eclipse.debug.core_3.10.100.v20160419-1720.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1371) ~[org.eclipse.debug.core_3.10.100.v20160419-1720.jar:na]
+	... 10 common frames omitted
+2016-10-02 11:38:29,809 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2016-10-02 19:42:29,662 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-10-18 11:13:38,840 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-10-19 13:20:20,425 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-10-23 09:30:27,652 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-10-24 09:11:39,990 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2016-10-25 11:52:00,151 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-11-01 12:17:00,318 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-11-17 11:19:42,911 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-03-29 12:14:19,307 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
