@@ -1,0 +1,302 @@
+#! /gaia/home/faculty/changw/ivl/bin/vvp
+:ivl_version "0.9.6 " "(v0_9_6)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x237c300 .scope module, "TestMod" "TestMod" 2 17;
+ .timescale 0 0;
+P_0x23663f8 .param/l "STDIN" 2 21, C4<10000000000000000000000000000000>;
+v0x23b46f0_0 .net "c5", 0 0, L_0x23b6fd0; 1 drivers
+RS_0x7fd1453b87c8/0/0 .resolv tri, L_0x23b5100, L_0x23b5870, L_0x23b6210, L_0x23b6a40;
+RS_0x7fd1453b87c8/0/4 .resolv tri, L_0x23b7220, C4<zzzzz>, C4<zzzzz>, C4<zzzzz>;
+RS_0x7fd1453b87c8 .resolv tri, RS_0x7fd1453b87c8/0/0, RS_0x7fd1453b87c8/0/4, C4<zzzzz>, C4<zzzzz>;
+v0x23b47e0_0 .net8 "s", 4 0, RS_0x7fd1453b87c8; 5 drivers
+v0x23b4860 .array "str", 3 1, 7 0;
+v0x23b48e0_0 .var "x", 4 0;
+v0x23b49c0_0 .var "y", 4 0;
+S_0x237e3c0 .scope module, "myBigAdder" "BigAdder" 2 28, 2 104, S_0x237c300;
+ .timescale 0 0;
+RS_0x7fd1453b8798 .resolv tri, L_0x23b5240, L_0x23b5aa0, L_0x23b64e0, L_0x23b6c70;
+v0x23b43e0_0 .net8 "c", 3 0, RS_0x7fd1453b8798; 4 drivers
+v0x23b44a0_0 .alias "c5", 0 0, v0x23b46f0_0;
+v0x23b4520_0 .alias "s", 4 0, v0x23b47e0_0;
+v0x23b45a0_0 .net "x", 4 0, v0x23b48e0_0; 1 drivers
+v0x23b4650_0 .net "y", 4 0, v0x23b49c0_0; 1 drivers
+L_0x23b4f20 .part v0x23b48e0_0, 0, 1;
+L_0x23b5010 .part v0x23b49c0_0, 0, 1;
+L_0x23b5100 .part/pv L_0x23b4c90, 0, 1, 5;
+L_0x23b5240 .part/pv L_0x23b4df0, 0, 1, 4;
+L_0x23b56f0 .part v0x23b48e0_0, 1, 1;
+L_0x23b5790 .part v0x23b49c0_0, 1, 1;
+L_0x23b5870 .part/pv L_0x23b5490, 1, 1, 5;
+L_0x23b5960 .part RS_0x7fd1453b8798, 0, 1;
+L_0x23b5aa0 .part/pv L_0x23b55f0, 1, 1, 4;
+L_0x23b5f50 .part v0x23b48e0_0, 2, 1;
+L_0x23b60e0 .part v0x23b49c0_0, 2, 1;
+L_0x23b6210 .part/pv L_0x23b5cf0, 2, 1, 5;
+L_0x23b63b0 .part RS_0x7fd1453b8798, 1, 1;
+L_0x23b64e0 .part/pv L_0x23b5e50, 2, 1, 4;
+L_0x23b6870 .part v0x23b48e0_0, 3, 1;
+L_0x23b6910 .part v0x23b49c0_0, 3, 1;
+L_0x23b6a40 .part/pv L_0x23b6660, 3, 1, 5;
+L_0x23b6b30 .part RS_0x7fd1453b8798, 2, 1;
+L_0x23b6c70 .part/pv L_0x23b6770, 3, 1, 4;
+L_0x23b70d0 .part v0x23b48e0_0, 4, 1;
+L_0x23b6bd0 .part v0x23b49c0_0, 4, 1;
+L_0x23b7220 .part/pv L_0x23b6e70, 4, 1, 5;
+L_0x23b7170 .part RS_0x7fd1453b8798, 3, 1;
+S_0x23b3da0 .scope module, "bit0" "FullAdderMod" 2 111, 2 119, S_0x237e3c0;
+ .timescale 0 0;
+L_0x23b4a70 .functor AND 1, L_0x23b4f20, L_0x23b5010, C4<1>, C4<1>;
+L_0x23b4b60 .functor XOR 1, L_0x23b4f20, L_0x23b5010, C4<0>, C4<0>;
+L_0x23b4c90 .functor XOR 1, C4<0>, L_0x23b4b60, C4<0>, C4<0>;
+L_0x23b4d40 .functor AND 1, C4<0>, L_0x23b4b60, C4<1>, C4<1>;
+L_0x23b4df0 .functor OR 1, L_0x23b4d40, L_0x23b4a70, C4<0>, C4<0>;
+v0x23b3e90_0 .net "andXY", 0 0, L_0x23b4a70; 1 drivers
+v0x23b3f50_0 .net "cIn", 0 0, C4<0>; 1 drivers
+v0x23b3ff0_0 .net "cOut", 0 0, L_0x23b4df0; 1 drivers
+v0x23b4090_0 .net "carryAnd", 0 0, L_0x23b4d40; 1 drivers
+v0x23b4110_0 .net "s", 0 0, L_0x23b4c90; 1 drivers
+v0x23b41b0_0 .net "s1", 0 0, L_0x23b4b60; 1 drivers
+v0x23b4250_0 .net "x", 0 0, L_0x23b4f20; 1 drivers
+v0x23b42f0_0 .net "y", 0 0, L_0x23b5010; 1 drivers
+S_0x23b3760 .scope module, "bit1" "FullAdderMod" 2 112, 2 119, S_0x237e3c0;
+ .timescale 0 0;
+L_0x23b5330 .functor AND 1, L_0x23b56f0, L_0x23b5790, C4<1>, C4<1>;
+L_0x23b5390 .functor XOR 1, L_0x23b56f0, L_0x23b5790, C4<0>, C4<0>;
+L_0x23b5490 .functor XOR 1, L_0x23b5960, L_0x23b5390, C4<0>, C4<0>;
+L_0x23b5540 .functor AND 1, L_0x23b5960, L_0x23b5390, C4<1>, C4<1>;
+L_0x23b55f0 .functor OR 1, L_0x23b5540, L_0x23b5330, C4<0>, C4<0>;
+v0x23b3850_0 .net "andXY", 0 0, L_0x23b5330; 1 drivers
+v0x23b3910_0 .net "cIn", 0 0, L_0x23b5960; 1 drivers
+v0x23b39b0_0 .net "cOut", 0 0, L_0x23b55f0; 1 drivers
+v0x23b3a50_0 .net "carryAnd", 0 0, L_0x23b5540; 1 drivers
+v0x23b3ad0_0 .net "s", 0 0, L_0x23b5490; 1 drivers
+v0x23b3b70_0 .net "s1", 0 0, L_0x23b5390; 1 drivers
+v0x23b3c10_0 .net "x", 0 0, L_0x23b56f0; 1 drivers
+v0x23b3cb0_0 .net "y", 0 0, L_0x23b5790; 1 drivers
+S_0x23b3120 .scope module, "bit2" "FullAdderMod" 2 113, 2 119, S_0x237e3c0;
+ .timescale 0 0;
+L_0x23b5b90 .functor AND 1, L_0x23b5f50, L_0x23b60e0, C4<1>, C4<1>;
+L_0x23b5bf0 .functor XOR 1, L_0x23b5f50, L_0x23b60e0, C4<0>, C4<0>;
+L_0x23b5cf0 .functor XOR 1, L_0x23b63b0, L_0x23b5bf0, C4<0>, C4<0>;
+L_0x23b5da0 .functor AND 1, L_0x23b63b0, L_0x23b5bf0, C4<1>, C4<1>;
+L_0x23b5e50 .functor OR 1, L_0x23b5da0, L_0x23b5b90, C4<0>, C4<0>;
+v0x23b3210_0 .net "andXY", 0 0, L_0x23b5b90; 1 drivers
+v0x23b32d0_0 .net "cIn", 0 0, L_0x23b63b0; 1 drivers
+v0x23b3370_0 .net "cOut", 0 0, L_0x23b5e50; 1 drivers
+v0x23b3410_0 .net "carryAnd", 0 0, L_0x23b5da0; 1 drivers
+v0x23b3490_0 .net "s", 0 0, L_0x23b5cf0; 1 drivers
+v0x23b3530_0 .net "s1", 0 0, L_0x23b5bf0; 1 drivers
+v0x23b35d0_0 .net "x", 0 0, L_0x23b5f50; 1 drivers
+v0x23b3670_0 .net "y", 0 0, L_0x23b60e0; 1 drivers
+S_0x23b2ae0 .scope module, "bit3" "FullAdderMod" 2 114, 2 119, S_0x237e3c0;
+ .timescale 0 0;
+L_0x23b6080 .functor AND 1, L_0x23b6870, L_0x23b6910, C4<1>, C4<1>;
+L_0x23b6600 .functor XOR 1, L_0x23b6870, L_0x23b6910, C4<0>, C4<0>;
+L_0x23b6660 .functor XOR 1, L_0x23b6b30, L_0x23b6600, C4<0>, C4<0>;
+L_0x23b66c0 .functor AND 1, L_0x23b6b30, L_0x23b6600, C4<1>, C4<1>;
+L_0x23b6770 .functor OR 1, L_0x23b66c0, L_0x23b6080, C4<0>, C4<0>;
+v0x23b2bd0_0 .net "andXY", 0 0, L_0x23b6080; 1 drivers
+v0x23b2c90_0 .net "cIn", 0 0, L_0x23b6b30; 1 drivers
+v0x23b2d30_0 .net "cOut", 0 0, L_0x23b6770; 1 drivers
+v0x23b2dd0_0 .net "carryAnd", 0 0, L_0x23b66c0; 1 drivers
+v0x23b2e50_0 .net "s", 0 0, L_0x23b6660; 1 drivers
+v0x23b2ef0_0 .net "s1", 0 0, L_0x23b6600; 1 drivers
+v0x23b2f90_0 .net "x", 0 0, L_0x23b6870; 1 drivers
+v0x23b3030_0 .net "y", 0 0, L_0x23b6910; 1 drivers
+S_0x23812a0 .scope module, "bit4" "FullAdderMod" 2 115, 2 119, S_0x237e3c0;
+ .timescale 0 0;
+L_0x23b6d10 .functor AND 1, L_0x23b70d0, L_0x23b6bd0, C4<1>, C4<1>;
+L_0x23b6d70 .functor XOR 1, L_0x23b70d0, L_0x23b6bd0, C4<0>, C4<0>;
+L_0x23b6e70 .functor XOR 1, L_0x23b7170, L_0x23b6d70, C4<0>, C4<0>;
+L_0x23b6f20 .functor AND 1, L_0x23b7170, L_0x23b6d70, C4<1>, C4<1>;
+L_0x23b6fd0 .functor OR 1, L_0x23b6f20, L_0x23b6d10, C4<0>, C4<0>;
+v0x238a270_0 .net "andXY", 0 0, L_0x23b6d10; 1 drivers
+v0x23b25e0_0 .net "cIn", 0 0, L_0x23b7170; 1 drivers
+v0x23b2680_0 .alias "cOut", 0 0, v0x23b46f0_0;
+v0x23b2720_0 .net "carryAnd", 0 0, L_0x23b6f20; 1 drivers
+v0x23b27d0_0 .net "s", 0 0, L_0x23b6e70; 1 drivers
+v0x23b2870_0 .net "s1", 0 0, L_0x23b6d70; 1 drivers
+v0x23b2950_0 .net "x", 0 0, L_0x23b70d0; 1 drivers
+v0x23b29f0_0 .net "y", 0 0, L_0x23b6bd0; 1 drivers
+    .scope S_0x237c300;
+T_0 ;
+    %vpi_call 2 33 "$display", "Enter a 5 bit integer for X then press 'Enter':";
+    %vpi_func 2 35 "$fgetc", 8, 32, P_0x23663f8;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 0, 0;
+   %set/av v0x23b4860, 8, 8;
+    %vpi_func 2 36 "$fgetc", 8, 32, P_0x23663f8;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 1, 0;
+   %set/av v0x23b4860, 8, 8;
+    %vpi_func 2 37 "$fgetc", 8, 32, P_0x23663f8;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 2, 0;
+   %set/av v0x23b4860, 8, 8;
+    %ix/load 3, 2, 0;
+    %mov 4, 0, 1;
+    %load/av 8, v0x23b4860, 8;
+    %mov 16, 0, 1;
+    %cmpi/u 8, 10, 9;
+    %inv 4, 1;
+    %jmp/0xz  T_0.0, 4;
+    %vpi_call 2 41 "$display", "Too many input characters...";
+    %vpi_call 2 42 "$finish";
+T_0.0 ;
+    %movi 8, 51, 9;
+    %ix/load 3, 0, 0;
+    %mov 4, 0, 1;
+    %load/av 17, v0x23b4860, 8;
+    %mov 25, 0, 1;
+    %cmp/u 8, 17, 9;
+    %jmp/0xz  T_0.2, 5;
+    %vpi_call 2 46 "$display", "Input greater than 5-bit";
+    %vpi_call 2 47 "$finish";
+T_0.2 ;
+    %ix/load 3, 0, 0;
+    %mov 4, 0, 1;
+    %load/av 8, v0x23b4860, 8;
+    %mov 16, 0, 1;
+    %cmpi/u 8, 51, 9;
+    %mov 8, 4, 1;
+    %movi 9, 49, 9;
+    %ix/load 3, 1, 0;
+    %mov 4, 0, 1;
+    %load/av 18, v0x23b4860, 8;
+    %mov 26, 0, 1;
+    %cmp/u 9, 18, 9;
+    %mov 9, 5, 1;
+    %and 8, 9, 1;
+    %jmp/0xz  T_0.4, 8;
+    %vpi_call 2 51 "$display", "Input greater than 5-bit";
+    %vpi_call 2 52 "$finish";
+T_0.4 ;
+    %ix/load 3, 0, 0;
+    %mov 4, 0, 1;
+    %load/av 8, v0x23b4860, 8;
+    %mov 16, 0, 9;
+    %subi 8, 48, 17;
+    %muli 8, 10, 17;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 0, 0;
+   %set/av v0x23b4860, 8, 8;
+    %ix/load 3, 1, 0;
+    %mov 4, 0, 1;
+    %load/av 8, v0x23b4860, 8;
+    %mov 16, 0, 24;
+    %subi 8, 48, 32;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 1, 0;
+   %set/av v0x23b4860, 8, 8;
+    %ix/load 3, 0, 0;
+    %mov 4, 0, 1;
+    %load/av 8, v0x23b4860, 8;
+    %ix/load 3, 1, 0;
+    %mov 4, 0, 1;
+    %load/av 16, v0x23b4860, 8;
+    %add 8, 16, 8;
+    %set/v v0x23b48e0_0, 8, 5;
+    %movi 8, 31, 7;
+    %load/v 15, v0x23b48e0_0, 5;
+    %mov 20, 0, 2;
+    %cmp/u 8, 15, 7;
+    %jmp/0xz  T_0.6, 5;
+    %vpi_call 2 62 "$display", "X input is larger than 5-bit integer... BYE FELICIA!";
+    %vpi_call 2 63 "$finish";
+T_0.6 ;
+    %vpi_call 2 66 "$display", "Enter a 5 bit integer for Y to add to X then press 'Enter':";
+    %vpi_func 2 68 "$fgetc", 8, 32, P_0x23663f8;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 0, 0;
+   %set/av v0x23b4860, 8, 8;
+    %vpi_func 2 69 "$fgetc", 8, 32, P_0x23663f8;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 1, 0;
+   %set/av v0x23b4860, 8, 8;
+    %vpi_func 2 70 "$fgetc", 8, 32, P_0x23663f8;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 2, 0;
+   %set/av v0x23b4860, 8, 8;
+    %ix/load 3, 2, 0;
+    %mov 4, 0, 1;
+    %load/av 8, v0x23b4860, 8;
+    %mov 16, 0, 1;
+    %cmpi/u 8, 10, 9;
+    %inv 4, 1;
+    %jmp/0xz  T_0.8, 4;
+    %vpi_call 2 73 "$display", "Too many input characters...";
+    %vpi_call 2 74 "$finish";
+T_0.8 ;
+    %movi 8, 51, 9;
+    %ix/load 3, 0, 0;
+    %mov 4, 0, 1;
+    %load/av 17, v0x23b4860, 8;
+    %mov 25, 0, 1;
+    %cmp/u 8, 17, 9;
+    %jmp/0xz  T_0.10, 5;
+    %vpi_call 2 78 "$display", "Input greater than 5-bit";
+    %vpi_call 2 79 "$finish";
+T_0.10 ;
+    %ix/load 3, 0, 0;
+    %mov 4, 0, 1;
+    %load/av 8, v0x23b4860, 8;
+    %mov 16, 0, 1;
+    %cmpi/u 8, 51, 9;
+    %mov 8, 4, 1;
+    %movi 9, 49, 9;
+    %ix/load 3, 1, 0;
+    %mov 4, 0, 1;
+    %load/av 18, v0x23b4860, 8;
+    %mov 26, 0, 1;
+    %cmp/u 9, 18, 9;
+    %mov 9, 5, 1;
+    %and 8, 9, 1;
+    %jmp/0xz  T_0.12, 8;
+    %vpi_call 2 83 "$display", "Input greater than 5-bit";
+    %vpi_call 2 84 "$finish";
+T_0.12 ;
+    %ix/load 3, 0, 0;
+    %mov 4, 0, 1;
+    %load/av 8, v0x23b4860, 8;
+    %mov 16, 0, 9;
+    %subi 8, 48, 17;
+    %muli 8, 10, 17;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 0, 0;
+   %set/av v0x23b4860, 8, 8;
+    %ix/load 3, 1, 0;
+    %mov 4, 0, 1;
+    %load/av 8, v0x23b4860, 8;
+    %mov 16, 0, 24;
+    %subi 8, 48, 32;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 1, 0;
+   %set/av v0x23b4860, 8, 8;
+    %ix/load 3, 0, 0;
+    %mov 4, 0, 1;
+    %load/av 8, v0x23b4860, 8;
+    %ix/load 3, 1, 0;
+    %mov 4, 0, 1;
+    %load/av 16, v0x23b4860, 8;
+    %add 8, 16, 8;
+    %set/v v0x23b49c0_0, 8, 5;
+    %movi 8, 31, 7;
+    %load/v 15, v0x23b49c0_0, 5;
+    %mov 20, 0, 2;
+    %cmp/u 8, 15, 7;
+    %jmp/0xz  T_0.14, 5;
+    %vpi_call 2 93 "$display", "Y input is larger than 5-bit integer... BYE FELICIA!";
+    %vpi_call 2 94 "$finish";
+T_0.14 ;
+    %delay 1, 0;
+    %vpi_call 2 99 "$display", "X = %d (%b) Y = %d (%b)\012Result = %d (%b)  C5 = %d", v0x23b48e0_0, v0x23b48e0_0, v0x23b49c0_0, v0x23b49c0_0, v0x23b47e0_0, v0x23b47e0_0, v0x23b46f0_0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "adder.v";

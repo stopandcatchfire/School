@@ -1,0 +1,18 @@
+// instructions.txt, to be read into memory
+// from Table 6-9, but ORG is 0 (not 100)
+0010_0000_0000_0110  //  2006      LDA X     // MEM[0]
+0111_0010_0000_0000  //  7200      CMA       // MEM[1]
+0111_0000_0010_0000  //  7020      INC       // MEM[2]
+0001_0000_0000_0111  //  1007      ADD Y     // MEM[3]
+0011_0000_0000_1000  //  3008      STA Z     // MEM[4]
+0111_0000_0000_0001  //  7001      HLT       // MEM[5]
+1111_1111_1110_1001  //  FFE9   X, DEC -23   // MEM[6]
+0000_0000_0101_0011  //  0053   Y, DEC 83    // MEM[7]
+0000_0000_0000_0000  //  0000   Z, HEX 0     // MEM[8]
+0000_0000_0000_0000  //  not used (just to pad up to 16 rows)
+0000_0000_0000_0000  //  not used (just to pad up to 16 rows)
+0000_0000_0000_0000  //  not used (just to pad up to 16 rows)
+0000_0000_0000_0000  //  not used (just to pad up to 16 rows)
+0000_0000_0000_0000  //  not used (just to pad up to 16 rows)
+0000_0000_0000_0000  //  not used (just to pad up to 16 rows)
+0000_0000_0000_0000  //  not used (just to pad up to 16 rows)
