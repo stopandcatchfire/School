@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# -lrt means compile with realtime lib
+
+gcc -m32 -Wall -lrt $1.c -o $1
+chmod 755 $1
+# $1
