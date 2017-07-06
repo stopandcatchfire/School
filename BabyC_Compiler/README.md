@@ -15,11 +15,15 @@ All tasks were completed on @titan.ecs.csus.edu school server.
 To compile, put all source files in single directory, makefile does the work, just "make" and hit return.
 bcc is the output of all the files.
 
-Usage: "bcc filename.bc"
+Use this to print ILOC to console:
+Usage: 
 
-	-use this to print ILOC to console.
+	"bcc filename.bc"
+   
+
 
 If you want to create an ILOC file with the instructions, I just created an empty filename.ILOC file with vi, then run:
+	
 	bcc filename.bc >> filename.ILOC
 
 It should be automated I know, output wasn't specified so I figured this would do.
